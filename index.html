@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpeakCopy</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="card hero-card">
+        <p class="eyebrow">Mobile Speech + Clipboard</p>
+        <h1>SpeakCopy</h1>
+        <p class="intro">
+          Type or speak. The latest text stays in sync with the preview and can
+          be copied with one tap.
+        </p>
+      </section>
+
+      <section class="card composer-card">
+        <div class="section-head">
+          <label for="text-input">Your text</label>
+          <p id="char-count" class="char-count">0 characters</p>
+        </div>
+
+        <textarea
+          id="text-input"
+          rows="8"
+          placeholder="Type here or tap the microphone and start speaking..."
+          aria-describedby="status-message"
+        ></textarea>
+
+        <div class="controls" aria-label="Text controls">
+          <button id="mic-button" class="button accent-button" type="button">
+            Start Listening
+          </button>
+          <button id="copy-button" class="button" type="button">Copy</button>
+          <button id="clear-button" class="button ghost-button" type="button">
+            Clear
+          </button>
+        </div>
+
+        <label class="toggle-row" for="auto-copy">
+          <span>Auto copy</span>
+          <input id="auto-copy" type="checkbox" />
+        </label>
+
+        <p
+          id="status-message"
+          class="status-message"
+          role="status"
+          aria-live="polite"
+        >
+          Ready
+        </p>
+      </section>
+
+      <section class="card preview-card" aria-labelledby="preview-title">
+        <div class="section-head">
+          <h2 id="preview-title">Live preview</h2>
+        </div>
+        <div id="preview-output" class="preview-output">
+          Your text preview will appear here.
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
